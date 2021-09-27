@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  flex-grow: 1;
+
+  background-color: #F8F8FF;
+
+  &__wrapper {
+    flex-grow: 1;
+    margin: 5px 0;
+    background-color: #DCDCDC;
+    border-radius: 10px;
+  }
+}

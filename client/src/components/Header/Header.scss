@@ -1,0 +1,13 @@
+$header-height: max-content;
+
+.header {
+  height: $header-height;
+  background-color: #808080;
+
+  border-radius: 0 0 10px 10px;
+
+  &__title {
+    text-align: center;
+    color: #FFF;
+  }
+}
