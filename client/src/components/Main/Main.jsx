@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { io } from "socket.io-client";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,17 +8,9 @@ import './Main.scss';
 
 export const Main = (props) => {
   useEffect(() => {
-    (async () => {
-      const socket = io('http://localhost:4000');
-
-      const response = await socket.on('ticker', function(response) {
-        const res = Array.isArray(response) ? response : [response];
-
-        return res[0].ticker;
-      });
-
-      console.log(response);
-    })();
+    const newSocket = io(`http://localhost:4000`);
+    newSocket.emit('start');
+    newSocket.on('ticker', response => console.log(response))
   });
 
   return (
