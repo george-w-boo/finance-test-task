@@ -14,7 +14,7 @@ export const Main = (props) => {
       const response = await socket.on('ticker', function(response) {
         const res = Array.isArray(response) ? response : [response];
 
-        return res[1].ticker;
+        return res[0].ticker;
       });
 
       console.log(response);
