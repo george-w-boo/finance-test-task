@@ -32,12 +32,6 @@ const tickersSlice = createSlice({
   },
 });
 
-// const store = configureStore({
-//   reducer: {
-//     tickers: tickersSlice.reducer,
-//   }
-// });
-
 const store = configureStore({
   reducer: tickersSlice.reducer,
 });

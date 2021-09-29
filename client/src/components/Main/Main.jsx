@@ -19,7 +19,7 @@ export const Main = (props) => {
       <Container className="main__wrapper">
         <div className="main__grid">
           {companies.map(company => (
-            <Card company={company} />
+            <Card company={company} key={company.name} />
           ))}
         </div>
       </Container>
