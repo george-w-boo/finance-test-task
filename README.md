@@ -94,3 +94,8 @@ The tickers we use:
 3. Modify content of the folder `server` - if you want to complete bonus tasks
 4. Commit and push your code to your repository
 5. Send us link to your repository
+
+## Implemented bonus functionality
+We can distinguish whether the price has risen or dropped by the background color of the price tag:
+- green - price rose
+- red - price dropped
