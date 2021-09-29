@@ -7,7 +7,15 @@
   &__wrapper {
     flex-grow: 1;
     margin: 5px 0;
+    padding: 10px;
     background-color: #DCDCDC;
     border-radius: 10px;
+  }
+
+  &__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px 10px;
   }
 }

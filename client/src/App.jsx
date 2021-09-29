@@ -20,11 +20,8 @@ function App() {
     });
   }, [dispatch]);
 
-    console.log('rerender');
-
   return (
     <>
-      {console.log('rerender')}
       <Header />
       <Main />
       <Footer />

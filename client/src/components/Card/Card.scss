@@ -1,0 +1,21 @@
+.card {
+  padding: 10px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__price {
+    text-align: center;
+
+    border-radius: 5px;
+
+    &--red {
+      background-color: #ffb6c1;
+    }
+
+    &--green {
+      background-color: #90ee90;
+    }
+  }
+}
