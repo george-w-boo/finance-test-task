@@ -1,22 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { io } from "socket.io-client";
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Header from '../Header';
+import Main from '../Main';
+import Footer from '../Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
-import { tickersActions } from './store/index';
+import { updateTickers } from '../../store/index';
 
-function App() {
+export function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const newSocket = io(`http://localhost:4000`);
-    newSocket.emit('start');
-    newSocket.on('ticker', response => {
-      dispatch(tickersActions.updateTickers(response));
+    const socket = io(`http://localhost:4000`);
+
+    socket.emit('start');
+    socket.on('ticker', response => {
+      dispatch(updateTickers(response));
     });
   }, [dispatch]);
 

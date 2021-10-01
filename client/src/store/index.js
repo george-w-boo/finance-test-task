@@ -1,7 +1,5 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-
-
 const initialState = {
   tickers: [
     {
@@ -27,7 +25,7 @@ const tickersSlice = createSlice({
   initialState,
   reducers: {
     updateTickers(state, action) {
-      state.tickers = [...action.payload];
+      return action.payload;
     }
   },
 });
@@ -36,6 +34,7 @@ const store = configureStore({
   reducer: tickersSlice.reducer,
 });
 
-export const tickersActions = tickersSlice.actions;
-
+export const { tickers } = initialState;
+export const { updateTickers } = tickersSlice.actions;
+export const reducerForTesting = tickersSlice.reducer;
 export default store;
